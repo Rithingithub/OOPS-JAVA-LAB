@@ -1,15 +1,12 @@
-public class garbage {
-    public static void main(String[] args) {
-        JavaExample sc=new JavaExample();
-        sc=null;
-        JavaExample a=new JavaExample();
-        JavaExample b=new JavaExample();
-        b=a;
-        System.gc();
-    }
-    protected void finalize()
-    {
-        System.out.println("garbage collected");
-    }
-    
+public class TestGarbage1{
+
+ public void finalize(){System.out.println("object is garbage collected");}
+
+ public static void main(String args[]){
+  TestGarbage1 s1=new TestGarbage1();
+  TestGarbage1 s2=new TestGarbage1();
+  s1=null;
+  s2=null;
+  System.gc();
+ }
 }
